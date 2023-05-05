@@ -31,7 +31,7 @@ public class Productcontrollers {
 	@Autowired
 	private Userservice userservice;
 	@Autowired
-	private Categoryservice categoryservice;
+	private Categoryservice categoryservice ;
 	
 	
 	@GetMapping("/products/{id}")
@@ -82,7 +82,7 @@ public class Productcontrollers {
             return "redirect:/products";
         }
     }
-	 @GetMapping("/products/{id}")
+	 @GetMapping("/products/show/{id}")
 		public String index(Model model,@PathVariable("id") Long id) {
 			Product product =productService.findProduct(id);
 			model.addAttribute("product", product);
